@@ -1,0 +1,4 @@
+name = Athulya alterations
+description = "Athulya alterations"
+package = Athulya
+core = 7.x

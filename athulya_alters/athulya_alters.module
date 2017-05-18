@@ -1,0 +1,281 @@
+<?php
+
+function athulya_alters_init() {
+ /* $path = current_path();
+  //dsm($path);
+  $path_alias = drupal_lookup_path('alias',$path);
+  //dsm($path_alias);
+  if ($path_alias == 'facilities') {
+	  drupal_add_css(drupal_get_path('theme','athulya'). '/css/facilities.css');
+  }
+  if ($path_alias == 'about-us') {
+	  drupal_add_css(drupal_get_path('theme','athulya'). '/css/about.css');
+  }
+  if ($path_alias == 'service-apartments') {
+	  drupal_add_css(drupal_get_path('theme','athulya'). '/css/facilities.css');
+  }
+  if ($path_alias == 'contact-us') {
+	  drupal_add_css(drupal_get_path('theme','athulya'). '/css/contact.css');
+  }
+  if ($path_alias == 'corporate-guest-house') {
+	  drupal_add_css(drupal_get_path('theme','athulya'). '/css/corporate.css');
+  }
+  if ($path_alias == 'paying-guest') {
+	  drupal_add_css(drupal_get_path('theme','athulya'). '/css/facilities.css');
+  }*/
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function athulya_alters_block_info() {
+  $blocks['our_clients'] = array(
+    'info' => t('Our Clients'),
+  );
+  
+  $blocks['sharing_types'] = array(
+    'info' => t('Sharing Types'),
+  );
+  
+  $blocks['hostel_eminities'] = array(
+    'info' => t('Hostel Ameninties'),
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function athulya_alters_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'our_clients':
+      $block['content'] = athulya_alters_our_clients();
+      break;
+	case 'sharing_types':
+      $block['content'] = athulya_alters_sharing_types();
+      break;
+	case 'hostel_eminities':
+      $block['content'] = athulya_alters_hostel_eminities();
+      break;
+  }
+
+  return $block;
+}
+
+function athulya_alters_our_clients() {
+  $output = '<div class="container-fluid" style="background-image: url(sites/all/themes/athulya/img/dining_room.jpg);">
+  <div class="row">
+    <div class="span12">
+           
+                <div id="myCarousel" class="carousel slide copy">
+                 
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                 
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    
+                <div class="item active">
+                  <div class="row">
+                       <center><h1 style="color:white;">OUR CLIENTS</h1></center>
+                  <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+                   <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+                  <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+               </div><!--/row-fluid-->
+            </div><!--/item-->
+                 
+                <div class="item">
+                  <div class="row">
+                   <center><h1 style="color:white;">OUR CLIENTS</h1></center>
+                       <div class="col-md-4 ">
+                        <div class="span3">
+                           <center>
+                              <img src="sites/all/themes/athulya/img/images.jpg"/>
+                              <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                              <h6 style="font-weight: bold;">AMIT</h6>
+                            </center>
+                        </div>
+                 </div>
+                 <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+                  <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+              </div><!--/row-fluid-->
+            </div><!--/item-->
+                 
+                <div class="item">
+                  <div class="row">
+                   <center><h1 style="color:white;">OUR CLIENTS</h1></center>
+                   <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+                   <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+                  <div class="col-md-4 ">
+                    <div class="span3">
+                       <center>
+                          <img src="sites/all/themes/athulya/img/images.jpg"/>
+                          <p class="padding-bottom">Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,Rooms are well lit,</p>
+                          <h6 style="font-weight: bold;">AMIT</h6>
+                        </center>
+                    </div>
+                 </div>
+                </div><!--/row-fluid-->
+              </div><!--/item-->
+                 
+          </div><!--/carousel-inner-->
+                 
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div><!--/myCarousel-->
+                 
+           
+    </div>
+  </div>
+</div>';
+  return $output;
+}
+
+function athulya_alters_sharing_types() {
+  $output = 'Test';
+  return $output;
+}
+
+function athulya_alters_hostel_eminities() {
+  $output = '<div class="row">
+   <div class="col-md-12 text-center">
+        <h3><b>AMENITIES</b></h3>
+        <hr style="width:8%;border-color: black;">
+    </div>
+      <div class="row">
+         <div class="container">
+            <div class="col-md-10 col-md-offset-1">
+              <p>lorem ispusm is simply dummy text of the printing and typesetting industry. Lorem ispum has been the industrys standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+          </div>
+      </div>
+</div>
+  
+  <div class="row" id="back">
+    <div class="col-md-12 col-lg-offset-1">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+            <div class="box">             
+              <div class="icon">
+              
+                <div class="info">
+                      <div class="image"><i class="fa fa-desktop"></i></div>
+                      <h5 class="title">Desktop Friendly</h5>
+                        <p>Beautiful,Standardized,Functional</p>
+                </div>
+            </div>
+         </div> 
+     </div>
+
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+       <div class="box">             
+          <div class="icon">
+             <div class="info">
+                <div class="image"><i class="fa fa-desktop"></i></div>
+                <h5 class="title">Desktop Friendly</h5>
+                <p>Beautiful,Standardized,Functional</p> 
+            </div>
+        </div>
+      </div> 
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+        <div class="box">             
+           <div class="icon">
+              <div class="info">
+                 <div class="image"><i class="fa fa-desktop"></i></div>
+                 <h5 class="title">Desktop Friendly</h5>
+                 <p>Beautiful,Standardized,Functional</p>
+            </div>
+         </div>
+      </div> 
+    </div>
+
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+       <div class="box">             
+         <div class="icon">
+            <div class="info">
+                <div class="image"><i class="fa fa-desktop"></i></div>
+                <h5 class="title">Desktop Friendly</h5>
+                <p>Beautiful,Standardized,Functional</p>
+            </div>
+        </div>
+      </div> 
+    </div>
+
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+        <div class="box">             
+          <div class="icon">
+             <div class="info">
+                <div class="image"><i class="fa fa-desktop"></i></div>
+                <h5 class="title">Shared Spaces</h5>
+                <p>Beautiful,Standardized,Functional</p>
+            </div>
+          </div>
+      </div> 
+    </div>
+  </div>
+ </div>
+ </div>';
+  return $output;
+}
